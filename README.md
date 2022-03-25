@@ -11,14 +11,16 @@ PumpinSwellNotifs gives desktop pop-up notifications to get you off your compute
 
 ---
 
-# *READ BELOW BEFORE DOWNLOADING
+**!!! READ BELOW BEFORE DOWNLOADING !!!**
+
+---
 
 ### I. Getting Started
 #### Installation Requirements:
 - python 3.10+
   - [install python here](https://realpython.com/installing-python/) if not installed
 - pip
-  - if <ins>**not installed**</ins> or <ins>**unsure**</ins>, continue to the section below
+  - if <ins>not installed</ins> or <ins>unsure</ins>, continue to the section below
 
 ---
 
@@ -27,9 +29,9 @@ PumpinSwellNotifs gives desktop pop-up notifications to get you off your compute
 - **NOTE:** `pip` is a required installation in order to correctly run this software<br />
 
 
-#### 1. What is [<ins>pip</ins>](https://www.w3schools.com/python/python_pip.asp)? 
+##### 1. What is [<ins>pip</ins>](https://www.w3schools.com/python/python_pip.asp)? 
 
-#### 2. Check if pip has already been downloaded and installed:
+##### 2. Check if pip has already been downloaded and installed:
 
 - open your terminal (steps to opening your terminal can be found [<ins>here</ins>](https://www.howtogeek.com/682770/how-to-open-the-terminal-on-a-mac/))
 - your terminal window should look something like this:
