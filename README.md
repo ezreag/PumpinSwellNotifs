@@ -7,7 +7,7 @@
 
 - ***NO PRIOR CODING EXPERIENCE NEEDED***, made for easy download and access
 
-PumpinSwellNotifs gives desktop pop-up notifications to get you off your computer on those days its absolutely **FIRING** :) 🌊.  PumpinSwell also acts as a command line interface that accesses surf and weather forecasts pulled straight from local forcasting data.
+PumpinSwellNotifs gives desktop pop-up notifications to get you off your computer on those days its absolutely **FIRING**. PumpinSwell also acts as a command line interface that accesses surf and weather forecasts pulled straight from local forcasting data.
 
 ---
 
