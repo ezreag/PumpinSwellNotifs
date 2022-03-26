@@ -19,12 +19,14 @@ PumpinSwellNotifs gives desktop pop-up notifications to get you off your compute
 #### a. Installation Requirements
 - python 3.10+
   - [install python here](https://realpython.com/installing-python/) if not installed
-- pip
-  - if <ins>not installed</ins> or <ins>unsure</ins>, continue to the section below
+- The Python Modules listed below:
+  - `pip`
+    - if <ins>not installed</ins> or <ins>unsure</ins>, continue to the section below
+  - `requests`
 
 ---
 
-#### b. Installing pip<br /><br />
+#### b. Installing `pip`<br /><br />
 
 - **NOTE:** `pip` is a required installation in order to correctly run this software<br /><br />
 
@@ -47,3 +49,14 @@ PumpinSwellNotifs gives desktop pop-up notifications to get you off your compute
 `pip: command not found`
 
 ---
+
+#### c. Installing `requests`<br /><br />
+
+After finished having downloaded the python `pip` module...
+
+If using MacOS:
+- Enter the following into the command line: <br /><br />
+`pip install requests` <br /><br />
+
+If using Windows or Linux:
+- Click [here](https://www.geeksforgeeks.org/how-to-install-requests-in-python-for-windows-linux-mac/) to install the python `requests` module
