@@ -23,6 +23,7 @@ PumpinSwellNotifs gives desktop pop-up notifications to get you off your compute
   - `pip`
     - if <ins>not installed</ins> or <ins>unsure</ins>, continue to the section below
   - `requests`
+  - `beautifulsoup4`
 
 ---
 
