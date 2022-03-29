@@ -61,3 +61,14 @@ If using MacOS:
 
 If using Windows or Linux:
 - Click [here](https://www.geeksforgeeks.org/how-to-install-requests-in-python-for-windows-linux-mac/) to install the python `requests` module
+
+---
+
+#### d. Installing `beautifulsoup4`<br /><br />
+
+After having downloaded the python `pip` module...
+
+- Enter the following into the command line: <br /><br />
+`pip install beautifulsoup4` <br /><br />
+
+---
