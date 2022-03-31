@@ -6,10 +6,9 @@
 
 import requests
 from bs4 import BeautifulSoup
-from URLgetter import * #chooseregion(), socalsurf()
+from URLgetter import *
 
-chooseregion()
-
+chooseregion() #function in URLgetter.py, creates urlobj class
 print("\n------------------------------------------------\n")
 print("\n\n\n\n\nLoading data...")
 print("Do not type for accurate results...\n")
@@ -18,16 +17,13 @@ print("\n\n\n\n\n************************************************\n")
 #GET request of url
 url = urlobj.urllist[0] #url string
 r = requests.get(url)
-
 #creates: soup object = BeautifulSoup(raw HTML, HTML parser used)
-#print(soup.prettify())
 soup = BeautifulSoup(r.content, 'html.parser')
 
 #print the location
 locationstr = str(soup.find('h1', attrs={'class':'fcst-loc-name-label'}))
 locationstr = locationstr[locationstr.find(">")+1:-5]
 print("CURRENT Conditions For: ", locationstr,"\n")
-
 print("************************************************\n")
 
 def getcurrtemp():
@@ -125,6 +121,7 @@ gettidedata()
 getwatertemp() 
 getwavecond() 
 
+
 print("************************************************")
 print("*                                              *")
 print("*    Thanks for using PumpinSwellNotifs :)     *")
@@ -132,6 +129,14 @@ print("*                                              *")
 print("************************************************\n")
 
 """"""""""""
+
+
+
+
+
+
+
+
 
 #first draft of getcurrtemp
 ''''
