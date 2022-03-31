@@ -10,10 +10,10 @@ from URLgetter import * #chooseregion(), socalsurf()
 
 chooseregion()
 
-print("\n-----------------------------------\n")
+print("\n------------------------------------------------\n")
 print("\n\n\n\n\nLoading data...")
 print("Do not type for accurate results...\n")
-print("\n\n\n\n\n***********************************\n")
+print("\n\n\n\n\n************************************************\n")
 
 #GET request of url
 url = urlobj.urllist[0] #url string
@@ -28,17 +28,17 @@ locationstr = str(soup.find('h1', attrs={'class':'fcst-loc-name-label'}))
 locationstr = locationstr[locationstr.find(">")+1:-5]
 print("CURRENT Conditions For: ", locationstr,"\n")
 
-print("***********************************\n")
+print("************************************************\n")
 
 def getcurrtemp():
     #prints current date's average temperature
     tempstr = str(soup.find('div', attrs={'class':'wx-icon-temp'}))
     if "°" in tempstr:
         startpos = tempstr.find(">") + 1
-        endpos = tempstr.find("</") - 1
+        endpos = tempstr.find("</")
         print("Avg Temperature: ", tempstr[startpos:endpos], "\n")
     else:
-        print("No temp forcast for today :(")
+        print("No temp forcast for today :(\n")
 
 def getcurrwind():
     #prints current date's wind direction and avg wind speed
@@ -48,12 +48,17 @@ def getcurrwind():
         endpos = windstr.find("<i") - 1
         print("Wind Direction:  ", windstr[startpos:endpos])
 
-        windstr = windstr[endpos:len(windstr)]
-        startpos = windstr.find("ht") + 8
-        endpos = windstr.find("mph") + 3
-        print("Avg Wind Speed:  ", windstr[startpos:endpos], "\n")
+        windspeedstr = windstr[endpos:len(windstr)]
+        if "arrow" in windspeedstr:
+            startpos = windspeedstr.find("arrow") + 17
+        else:
+            startpos = windspeedstr.find("/i>") + 3
+        endpos = windspeedstr.find("mph") + 3
+        print("Avg Wind Speed: ", windspeedstr[startpos:endpos], "\n")
+    elif "Calm" in windstr:
+        print("Avg Wind Speed:  ", "Calm", "\n")
     else:
-        print("No wind forcast for today :(")
+        print("No wind forcast for today :(\n")
 
 def getbuoydata():
     #prints buoy number and data
@@ -68,7 +73,7 @@ def getbuoydata():
         endpos = buoystr.find("sec") + 3
         print("Buoy Data: ", buoystr[startpos:endpos], "\n")
     else:
-        print("No buoy data for today :(")
+        print("No buoy data for today :(\n")
 
 def gettidedata():
     #prints tide data
@@ -80,7 +85,7 @@ def gettidedata():
         print("LOW TIDE:  ", lowstr[lowstr.find(":")-2:-6])
         print("HIGH TIDE: ", highstr[highstr.find(":")-2:-6], "\n")
     else:
-        print("No tide data for today :(")
+        print("No tide data for today :(\n")
     
 def getwatertemp():
     #prints water temp data
@@ -92,7 +97,7 @@ def getwatertemp():
         print("Avg Water Temp:   ", watertemplist[1][tempstr.find(">")+1:-6])
         print("Recommended Suit: ", watertemplist[2][suitstr.find(">")+1:-6], "\n")
     else:
-        print("No water temp data for today :(")
+        print("No water temp data for today :(\n")
 
 def getwavecond():
     #prints wave height
@@ -102,7 +107,7 @@ def getwavecond():
         waveheighstr = wavestr[waveheighpos:-6]
         print("Wave Height:    ", waveheighstr)
     else:
-        print("No wave height data for today :(")
+        print("No wave height data for today :(\n")
 
     #prints wave condition
     wavecondstr = str(soup.find('div', attrs={'class':'graph-data-wave-cond'}))
@@ -110,7 +115,7 @@ def getwavecond():
     if wavecondstr == "CHOPPY" or wavecondstr == "FAIR" or wavecondstr == "CLEAN":
         print("Wave Condition: ", wavecondstr, "\n")
     else:
-        print("No wave condition data for today :(")
+        print("No wave condition data for today :(\n")
 
 
 getcurrtemp() 
@@ -120,9 +125,11 @@ gettidedata()
 getwatertemp() 
 getwavecond() 
 
-print("***********************************\n")
-print("Thanks for using PumpinSwellNotifs :)\n")
-print("***********************************\n")
+print("************************************************")
+print("*                                              *")
+print("*    Thanks for using PumpinSwellNotifs :)     *")
+print("*                                              *")
+print("************************************************\n")
 
 """"""""""""
 
