@@ -40,25 +40,7 @@ def socalsurf():
     print("Type the number that corresponds to the correct county and press ENTER:", end = " ")
     num = int(input())
 
-    if num == 1:
-        url = southerncalifornia[0]
-    elif num == 2:
-        url = southerncalifornia[1]
-    elif num == 3:
-        url = southerncalifornia[2]
-    elif num == 4:
-        url = southerncalifornia[3]
-    elif num == 5:
-        url = southerncalifornia[4]
-    elif num == 6:
-        url = southerncalifornia[5]
-    elif num == 7:
-        url = southerncalifornia[6]
-    elif num == 8:
-        url = southerncalifornia[7]
-    if num == 1 or num == 2 or num == 3 or num == 4 or num == 5 or num == 6 or num == 7 or num == 8:
-        urlobj.urllist.append(url)
-    else:
+    if num not in range(1,9):
         print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         print("!                                              !")
         print("!             ERROR: INVALID COUNTY            !")
@@ -66,6 +48,9 @@ def socalsurf():
         print("!                                              !")
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
         socalsurf()
+    elif num in range(1,9):
+        url = southerncalifornia[num - 1]
+        urlobj.urllist.append(url)
 
 def norcalsurf():
     northerncalifornia = \
@@ -99,58 +84,21 @@ def norcalsurf():
     print("          7: Ocean Beach, CA")
     print("          8: Half Moon Bay, CA")
     print("          9: Pescadero, CA")
-    print("          !: Davenport, CA")
-    print("          @: Santa Cruz, CA")
-    print("          #: Moss Landing, CA")
-    print("          $: Monterey, CA")
-    print("          %: Big Sur, CA")
-    print("          ^: San Simeon, CA")
-    print("          &: Morro Bay, CA")
-    print("          *: Pismo Beach, CA\n")
+    print("          10: Davenport, CA")
+    print("          11: Santa Cruz, CA")
+    print("          12: Moss Landing, CA")
+    print("          13: Monterey, CA")
+    print("          14: Big Sur, CA")
+    print("          15: San Simeon, CA")
+    print("          16: Morro Bay, CA")
+    print("          17: Pismo Beach, CA\n")
 
     print("------------------------------------------------\n")
 
     print("Type the number that corresponds to the correct county and press ENTER:", end = " ")
-    num = str(input())
+    num = int(input())
 
-    if num == "1":
-        url = northerncalifornia[0]
-    elif num == "2":
-        url = northerncalifornia[1]
-    elif num == "3":
-        url = northerncalifornia[2]
-    elif num == "4":
-        url = northerncalifornia[3]
-    elif num == "5":
-        url = northerncalifornia[4]
-    elif num == "6":
-        url = northerncalifornia[5]
-    elif num == "7":
-        url = northerncalifornia[6]
-    elif num == "8":
-        url = northerncalifornia[7]
-    elif num == "9":
-        url = northerncalifornia[8]
-    elif num == "!":
-        url = northerncalifornia[9]
-    elif num == "@":
-        url = northerncalifornia[10]
-    elif num == "#":
-        url = northerncalifornia[11]
-    elif num == "$":
-        url = northerncalifornia[12]
-    elif num == "%":
-        url = northerncalifornia[13]
-    elif num == "^":
-        url = northerncalifornia[14]
-    elif num == "&":
-        url = northerncalifornia[15]
-    elif num == "*":
-        url = northerncalifornia[16]
-    if num == "1" or num == "2" or num == "3" or num == "4" or num == "5" or num == "6" or num == "7" or num == "8" or num == "9" or\
-        num == "!" or num == "@" or num == "#" or num == "$" or num == "%" or num == "^" or num == "&" or num == "*":
-        urlobj.urllist.append(url)
-    else:
+    if num not in range(1,18):
         print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         print("!                                              !")
         print("!             ERROR: INVALID COUNTY            !")
@@ -158,22 +106,86 @@ def norcalsurf():
         print("!                                              !")
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
         norcalsurf()
+    elif num in range(1,18):
+        url = northerncalifornia[num - 1]
+        urlobj.urllist.append(url)
 
-def chooseregion():
+def hawaiisurf():
+    hawaii = \
+    ["https://www.swellinfo.com/surf-forecast/north-shore-oahu-hawaii",
+    "https://www.swellinfo.com/surf-forecast/south-shore-oahu-hawaii",
+    "https://www.swellinfo.com/surf-forecast/sandy-beach-oahu-hawaii",
+    "https://www.swellinfo.com/surf-forecast/ewa-beach-oahu-hawaii",
+    "https://www.swellinfo.com/surf-forecast/east-oahu-hawaii",
+    "https://www.swellinfo.com/surf-forecast/west-oahu-hawaii",
+    "https://www.swellinfo.com/surf-forecast/hookipa-maui",
+    "https://www.swellinfo.com/surf-forecast/waiehu-maui",
+    "https://www.swellinfo.com/surf-forecast/honolua-maui",
+    "https://www.swellinfo.com/surf-forecast/lahaina-maui",
+    "https://www.swellinfo.com/surf-forecast/kehei-maui",
+    "https://www.swellinfo.com/surf-forecast/makena-maui",
+    "https://www.swellinfo.com/surf-forecast/hana-maui",
+    "https://www.swellinfo.com/surf-forecast/northeast-hawaii",
+    "https://www.swellinfo.com/surf-forecast/northwest-hawaii",
+    "https://www.swellinfo.com/surf-forecast/west-hawaii",
+    "https://www.swellinfo.com/surf-forecast/southeast-hawaii"]
+
+    print("\n\n\n\n\n       Choose a Hawaiian Island Location:\n")
+    print("------------------------------------------------\n")
+
+    print("          1: North Shore Oahu, HI")
+    print("          2: Honolulu, HI")
+    print("          3: Sandy Beach Oahu, HI")
+    print("          4: Ewa Beach Oahu, HI")
+    print("          5: East (Hauula) Oahu, HI")
+    print("          6: West Shore Oahu, HI")
+    print("          7: Hookipa Maui, HI")
+    print("          8: Waiehu Maui, HI")
+    print("          9: Honolua Maui, HI")
+    print("          10: Lahaina Maui, HI")
+    print("          11: Kihei Maui, HI")
+    print("          12: Makena Maui, HI")
+    print("          13: Hana Maui, HI")
+    print("          14: Northeast Hawaii, HI")
+    print("          15: Northwest Hawaii, HI")
+    print("          16: West Hawaii, HI")
+    print("          17: Southeast Hawaii, HI\n")
+
+    print("------------------------------------------------\n")
+
+    print("Type the number that corresponds to the correct county and press ENTER:", end = " ")
+    num = int(input())
+
+    if num not in range(1,18):
+        print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print("!                                              !")
+        print("!             ERROR: INVALID COUNTY            !")
+        print("!                   TRY AGAIN                  !")
+        print("!                                              !")
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
+        hawaiisurf()
+    elif num in range(1,18):
+        url = hawaii[num - 1]
+        urlobj.urllist.append(url)
+
+def chooseregion(): #add a parameter that intakes input
     #request user input to choose a region   
-    print("\n\n\n\n\n\n         Choose a region of California:\n")
+    print("\n\n\n\n\n\n               Choose a region:\n")
     print("------------------------------------------------\n")
     print("                  1: Socal")
-    print("                  2: Norcal\n")
+    print("                  2: Norcal")
+    print("                  3: Hawaii\n")
     print("------------------------------------------------\n")
     print("Type the number that corresponds to the correct region and press ENTER:", end = " ")
-    
     region = int(input())
     print("\n")
+
     if region == 1:
         socalsurf()
     elif region == 2:
         norcalsurf()
+    elif region == 3:
+        hawaiisurf()
     else:
         print("\n!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         print("!                                              !")
@@ -181,4 +193,4 @@ def chooseregion():
         print("!                   TRY AGAIN                  !")
         print("!                                              !")
         print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!\n")
-        chooseregion()
+        chooseregion(region)
